@@ -11,6 +11,6 @@ class Solution(object):
                 anagrams[sorte].append(word)
             else:
                 anagrams[sorte] = [word]
-        return anagrams.values()
+        return list(anagrams.values())
 
         
