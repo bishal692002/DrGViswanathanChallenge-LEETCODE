@@ -1,2 +1,2 @@
 # Dsa
-My daily track of DSA practice
+My daily track of DSA practice.
