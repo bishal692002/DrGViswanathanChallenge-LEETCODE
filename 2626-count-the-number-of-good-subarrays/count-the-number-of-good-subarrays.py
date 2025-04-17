@@ -9,7 +9,8 @@ class Solution:
                 count_pairs += cnt[nums[r]]
                 cnt[nums[r]] += 1
                 r += 1
-            if count_pairs < k: break
+            if count_pairs < k:
+                break
             ans += n - r + 1
             cnt[nums[l]] -= 1
             count_pairs -= cnt[nums[l]]
