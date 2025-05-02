@@ -1,10 +1,17 @@
 class Solution(object):
     def countLargestGroup(self, n):
-        count = {}  
-
-        for i in range(1, n + 1):  
-            s = sum(int(d) for d in str(i))
-            count[s] = count.get(s, 0) + 1
+        count = {}
+        for i in xrange(1, n + 1):
+            digit_sum = sum(int(d) for d in str(i))
+            if digit_sum in count:
+                count[digit_sum] += 1
+            else:
+                count[digit_sum] = 1
 
         max_size = max(count.values())
-        return sum(1 for v in count.values() if v == max_size)
+        result = 0
+        for group_size in count.values():
+            if group_size == max_size:
+                result += 1
+
+        return result
