@@ -1,2 +1,2 @@
-# Dsa
+# Dsa.
 My daily track of DSA practice.
