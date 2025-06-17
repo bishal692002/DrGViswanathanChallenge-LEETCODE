@@ -12,6 +12,7 @@ class Solution(object):
                 hmap[num] = 1
         result = []
         for key,value in hmap.items():
-            if value > (len(nums)//3):
+            if value > len(nums)//3:
                 result.append(key)
         return result
+        
