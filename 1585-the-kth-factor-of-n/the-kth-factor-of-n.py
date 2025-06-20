@@ -5,14 +5,13 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        small = []
-        large = []
+        factors = []
         for i in range(1, int(n**0.5) + 1):
             if n % i == 0:
-                small.append(i)
-                if i != n // i:
-                    large.append(n // i)
-        factors = small + large[::-1]
+                factors.append(i)
+                if n // i != i:
+                    factors.append(n // i)
+        factors.sort()
         if k <= len(factors):
             return factors[k - 1]
         else:
