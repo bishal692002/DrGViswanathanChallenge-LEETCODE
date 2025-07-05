@@ -1,18 +1,18 @@
 class Solution(object):
     def findLucky(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: int
-        """
-        maxi = []
-        hmap = {}
-        for char in arr:
-            hmap[char] = hmap.get(char, 0) + 1
 
-        for key, value in hmap.items():
-            if value == key:
-                maxi.append(value)
+        freq = {}
 
-        if maxi:
-            return max(maxi)
-        return -1
+        for num in arr:
+            if num in freq:
+                freq[num] += 1
+            else:
+                freq[num] = 1
+
+        lucky = -1
+
+        for num in freq:
+            if freq[num] == num:
+                lucky = max(lucky, num)
+
+        return lucky
