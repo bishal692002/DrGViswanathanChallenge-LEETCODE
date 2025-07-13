@@ -1,6 +1,6 @@
 class Solution(object):
     def maxSubArray(self, nums):
-        maxSum=float('-inf')
+        maxSum=nums[0]
         currSum=0
         for i in nums:
             currSum+=i
