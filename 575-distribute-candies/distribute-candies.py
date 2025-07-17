@@ -1,4 +1,13 @@
 class Solution(object):
     def distributeCandies(self, candyType):
-        return min(len(set(candyType)), len(candyType) // 2)
-        
+        candyTypeSet = set(candyType)
+
+        n1 = len(candyType)/2
+        n2 = len(candyTypeSet) 
+
+        if n2 > n1:
+            return n1
+
+        return n2
+                
+       
