@@ -5,10 +5,14 @@ class Solution(object):
         :rtype: int
         """
         count = 0
-        for i in range(len(nums)):
-            for j in range(i+1,len(nums)):
-                if nums[i] == nums[j]:
-                    count += 1
+        hmap = {}
+        for p in nums:
+            hmap[p] = hmap.get(p, 0) + 1
+        
+        for num in hmap:
+            val = hmap[num]
+            for i in range(val):
+                count += i
         return count
 
 
