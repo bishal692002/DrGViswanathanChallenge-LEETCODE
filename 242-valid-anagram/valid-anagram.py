@@ -8,11 +8,15 @@ class Solution(object):
 
         if len(s) != len(t):
             return False
-        s1 = {}
-        t1 = {}
+        freq = {}
+        for ch in s:
+            freq[ch] = freq.get(ch, 0) + 1
 
-        for num in s:
-            s1[num] = s1.get(num,0)+1 
-        for num in t:
-            t1[num] = t1.get(num,0)+1 
-        return s1 == t1
+        for ch in t:
+            if ch not in freq:
+                return False
+            freq[ch] -= 1
+            if freq[ch] < 0:
+                return False
+        return True
+        
