@@ -4,5 +4,5 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        seen = set(nums)
-        return len(nums) > len(seen)
+        # seen = set(nums)
+        return len(set(nums)) < len(nums)
