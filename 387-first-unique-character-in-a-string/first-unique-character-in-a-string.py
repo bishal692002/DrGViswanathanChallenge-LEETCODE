@@ -1,9 +1,11 @@
 class Solution(object):
     def firstUniqChar(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        letters='abcdefghijklmnopqrstuvwxyz'
-        index=[s.index(l) for l in letters if s.count(l) == 1]
-        return min(index) if len(index) > 0 else -1
+        hmap = {}
+        for char in s:
+            hmap[char] = hmap.get(char,0) + 1
+
+        for i in range(len(s)):
+            if hmap[s[i]] == 1:
+                return i
+        
+        return -1
