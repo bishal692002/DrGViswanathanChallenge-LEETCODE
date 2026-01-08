@@ -11,12 +11,10 @@ class Solution(object):
         """
         current = head
         prev = None
-
         while current is not None:
             next = current.next
             current.next = prev
             prev = current
             current = next
         return prev
-
         
